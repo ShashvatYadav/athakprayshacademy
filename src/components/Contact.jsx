@@ -4,6 +4,10 @@ import { courses, classOptions } from "../data/courses.js";
 import { whatsappLink, isValidPhone } from "../lib/whatsapp.js";
 
 const interestOptions = [...courses.filter((c) => c.show).map((c) => c.title), "Not sure yet"];
+function ContactIcon({ kind }) {
+  const common = { fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" };
+  return <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" {...common}>{kind === "address" ? <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></> : kind === "phone" ? <path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3c0 1-1 2-2 2C10 19 5 14 5 5c0-1 1-2 2-2Z"/> : kind === "whatsapp" ? <><path d="M20 11.5a8 8 0 0 1-12 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2 2 3.5 4 4"/></> : <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></>}</svg>;
+}
 
 export default function Contact({ preselected }) {
   const [form, setForm] = useState({ name: "", phone: "", className: "", interest: "", message: "" });
@@ -15,6 +19,14 @@ export default function Contact({ preselected }) {
   }, [preselected]);
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const socials = [
+    { label: "YouTube", href: academy.youtubeUrl, icon: <path d="M22 12s0-4-1-5-9-1-9-1-8 0-9 1-1 5-1 5 0 4 1 5 9 1 9 1 8 0 9-1 1-5 1-5ZM10 9l6 3-6 3z" /> },
+    { label: "Instagram", href: academy.instagramUrl, icon: <><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r=".8" fill="currentColor"/></> },
+    { label: "WhatsApp", href: academy.whatsappUrl, icon: <><path d="M20 11.5a8 8 0 0 1-12 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2 2 3.5 4 4"/></> },
+    { label: "Email", href: `mailto:${academy.email}`, icon: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></> },
+    { label: "Call", href: `tel:${academy.phonePrimary}`, icon: <path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3c0 1-1 2-2 2C10 19 5 14 5 5c0-1 1-2 2-2Z"/> },
+  ];
 
   function validate() {
     const errs = {};
@@ -49,31 +61,16 @@ export default function Contact({ preselected }) {
       <div className="container contact-grid">
         <div>
           <h2>Contact the academy</h2>
-          <address>
-            <p>{academy.address}</p>
-            <p>
-              Phone:{" "}
-              <a href={`tel:${academy.phonePrimary}`}>{academy.phonePrimary}</a>,{" "}
-              <a href={`tel:${academy.phoneSecondary}`}>{academy.phoneSecondary}</a>
-            </p>
-            <p>
-              WhatsApp:{" "}
-              <a href={academy.whatsappUrl} target="_blank" rel="noopener noreferrer">{academy.whatsappDisplay}</a>
-            </p>
-            <p>
-              Email: <a href={`mailto:${academy.email}`}>{academy.email}</a>
-            </p>
+          <address className="contact-rows">
+            <p><a className="contact-location-link" href={academy.mapsUrl} target="_blank" rel="noopener noreferrer"><span className="contact-icon"><ContactIcon kind="address" /></span><span>{academy.address}</span></a></p>
+            <p><span className="contact-icon"><ContactIcon kind="phone" /></span><span><a href={`tel:${academy.phonePrimary}`}>{academy.phonePrimary}</a><br /><a href={`tel:${academy.phoneSecondary}`}>{academy.phoneSecondary}</a></span></p>
+            <p><span className="contact-icon"><ContactIcon kind="whatsapp" /></span><span><a href={academy.whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp · {academy.whatsappDisplay}</a></span></p>
+            <p><span className="contact-icon"><ContactIcon kind="email" /></span><span><a href={`mailto:${academy.email}`}>{academy.email}</a></span></p>
           </address>
-          <p>
-            <a className="btn btn-outline btn-small" href={academy.mapsUrl} target="_blank" rel="noopener noreferrer">
-              Get directions on Google Maps
-            </a>
-          </p>
-          <p className="social">
-            <a href={academy.youtubeUrl} target="_blank" rel="noopener noreferrer">YouTube</a>
-            {" · "}
-            <a href={academy.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
-          </p>
+          <p className="timing-note">Call or WhatsApp for batch timings.</p>
+          <div className="social-buttons" aria-label="Contact and social links">{socials.map((s) => <a key={s.label} className="social-button" href={s.href} aria-label={s.label} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{s.icon}</svg></a>)}</div>
+          <div className="map-frame"><iframe src={academy.mapsEmbedUrl} loading="lazy" title="Athak Prayas Academy location map" referrerPolicy="no-referrer-when-downgrade" /></div>
+          <p><a className="btn btn-outline btn-small" href={academy.mapsUrl} target="_blank" rel="noopener noreferrer">Get Directions</a></p>
         </div>
 
         <form onSubmit={onSubmit} noValidate aria-labelledby="enquiry-title">

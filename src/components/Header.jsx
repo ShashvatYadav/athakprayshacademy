@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { academy } from "../data/academy.js";
 
-export default function Header({ nav }) {
+export default function Header({ nav, active }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="site-header">
@@ -31,7 +31,7 @@ export default function Header({ nav }) {
           <ul>
             {nav.map((n) => (
               <li key={n.id}>
-                <a href={`#${n.id}`} onClick={() => setOpen(false)}>{n.label}</a>
+                <a className={active === n.id ? "active" : ""} aria-current={active === n.id ? "location" : undefined} href={`#${n.id}`} onClick={() => setOpen(false)}>{n.label}</a>
               </li>
             ))}
           </ul>

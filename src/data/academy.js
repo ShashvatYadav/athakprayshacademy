@@ -13,4 +13,5 @@ export const academy = {
   youtubeUrl: "https://youtube.com/@athakprayasacademy?si=-ZzPDo17ww2kFeHY",
   instagramUrl: "https://www.instagram.com/athak_prayas_academy/",
   mapsUrl: "https://maps.app.goo.gl/yKzeDNfbfZMzi3xg6?g_st=awb",
+  mapsEmbedUrl: "https://www.google.com/maps?q=Station+Road+Handia+Prayagraj+Uttar+Pradesh+India&output=embed",
 };

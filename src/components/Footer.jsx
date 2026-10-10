@@ -1,45 +1,9 @@
 import { academy } from "../data/academy.js";
 
 export default function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <p className="footer-name">
-            {academy.name} · <span lang="hi">{academy.nameHindi}</span>
-          </p>
-          <p className="footer-tagline">“{academy.tagline}”</p>
-          <p>{academy.address}</p>
-        </div>
-        <div>
-          <p>
-            Phone: <a href={`tel:${academy.phonePrimary}`}>{academy.phonePrimary}</a> ·{" "}
-            <a href={`tel:${academy.phoneSecondary}`}>{academy.phoneSecondary}</a>
-          </p>
-          <p>
-            WhatsApp:{" "}
-            <a href={academy.whatsappUrl} target="_blank" rel="noopener noreferrer">
-              {academy.whatsappDisplay}
-            </a>
-          </p>
-          <p>
-            Email: <a href={`mailto:${academy.email}`}>{academy.email}</a>
-          </p>
-          <p>
-            Social:{" "}
-            <a href={academy.youtubeUrl} target="_blank" rel="noopener noreferrer">
-              YouTube
-            </a>{" "}
-            ·{" "}
-            <a href={academy.instagramUrl} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-          </p>
-        </div>
-      </div>
-      <p className="container copyright">
-        © {new Date().getFullYear()} {academy.name} (अथक प्रयास एकेडमी). All rights reserved. Direct inquiries via WhatsApp.
-      </p>
-    </footer>
-  );
+  return <footer className="site-footer"><div className="container footer-grid">
+    <div className="footer-brand"><img src="/media/logo.png" alt="" width="56" height="56" loading="lazy" /><div><p className="footer-name">{academy.name}</p><p className="footer-hindi" lang="hi">{academy.nameHindi}</p><p className="footer-tagline">“{academy.tagline}”</p></div></div>
+    <nav className="footer-links" aria-label="Footer quick links"><a href="#home">Home</a><a href="#courses">Courses</a><a href="#results">Results</a><a href="#teachers">Faculty</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+    <div className="footer-contact"><p><a href={academy.mapsUrl} target="_blank" rel="noopener noreferrer">{academy.addressShort}</a></p><p><a href={`tel:${academy.phonePrimary}`}>{academy.phonePrimary}</a> · <a href={`tel:${academy.phoneSecondary}`}>{academy.phoneSecondary}</a></p><div className="social-buttons footer-social"><a className="social-button" href={academy.youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12s0-4-1-5-9-1-9-1-8 0-9 1-1 5-1 5 0 4 1 5 9 1 9 1 8 0 9-1 1-5 1-5ZM10 9l6 3-6 3z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/></svg></a><a className="social-button" href={academy.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a><a className="social-button" href={academy.whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 11.5a8 8 0 0 1-12 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2 2 3.5 4 4"/></svg></a><a className="social-button" href={`mailto:${academy.email}`} aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a></div></div>
+  </div><p className="container copyright">© {new Date().getFullYear()} {academy.name} (अथक प्रयास एकेडमी). All rights reserved.</p></footer>;
 }

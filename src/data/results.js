@@ -5,19 +5,14 @@
 
 export const studentResults = [
   {
-    id: "anurag-yadav",
-    name: "Anurag Yadav",
-    exam: "UP NMMS",
-    year: 2026,
-    detail: "District Rank 1st & State Topper (Jaunpur)",
-    approved: true,
-  },
-  {
     id: "aman-yadav",
     name: "Aman Yadav",
     exam: "JNVST (Class 5)",
     year: 2026,
     detail: "Scored 92/100 · District Rank 49",
+    photo: null,
+    showPhoto: false,
+    verified: true,
     approved: true,
   },
   {
@@ -26,6 +21,9 @@ export const studentResults = [
     exam: "UP NMMS",
     year: 2026,
     detail: "District Rank 27th",
+    photo: "/generated/achiever-ansh-kumar-jaiswal.jpg",
+    showPhoto: true,
+    verified: true,
     approved: true,
   },
   {
@@ -34,6 +32,9 @@ export const studentResults = [
     exam: "UP NMMS",
     year: 2026,
     detail: "District Rank 37th",
+    photo: "/generated/achiever-dev-chaurasiya.jpg",
+    showPhoto: true,
+    verified: true,
     approved: true,
   },
   {
@@ -42,6 +43,9 @@ export const studentResults = [
     exam: "UP NMMS",
     year: 2026,
     detail: "District Rank 43rd",
+    photo: "/generated/achiever-shubham-modanwal.jpg",
+    showPhoto: true,
+    verified: true,
     approved: true,
   },
   {
@@ -50,6 +54,9 @@ export const studentResults = [
     exam: "UP NMMS",
     year: 2026,
     detail: "District Rank 47th",
+    photo: "/generated/achiever-arpit-kumar-yadav.jpg",
+    showPhoto: true,
+    verified: true,
     approved: true,
   },
   {
@@ -58,7 +65,7 @@ export const studentResults = [
     exam: "Board Exam",
     year: 2026,
     detail: "91% aggregate · Sanskrit 98/100 · Maths 95/100",
-    approved: true,
+    approved: false,
   },
   {
     id: "dheeraj-yadav",
@@ -66,7 +73,7 @@ export const studentResults = [
     exam: "Board Exam",
     year: 2026,
     detail: "87% aggregate · Maths 92/100 · Science 88/100",
-    approved: true,
+    approved: false,
   },
   {
     id: "ruchi-yadav",
@@ -74,7 +81,7 @@ export const studentResults = [
     exam: "Board Exam",
     year: 2026,
     detail: "85% aggregate · English 91/100",
-    approved: true,
+    approved: false,
   },
 ];
 
