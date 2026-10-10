@@ -6,14 +6,14 @@ export const teachers = [
     title: "Director & MD",
     subject: "Mathematics",
     details: "M.A., B.Ed., BTC, NET qualified. Leads the academy and teaches Mathematics.",
-    photo: "/media/vikas-sir.jpg",
+    photo: "/media/vikas-sir.jpeg",
   },
   {
     id: "aditya",
     name: "Aditya Sir",
     subject: "English",
     showNavyBackground: false,
-    photo: null,
+    photo: "/media/adityasir.jpeg",
   },
   {
     id: "gurudev",

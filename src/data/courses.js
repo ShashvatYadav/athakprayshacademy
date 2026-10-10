@@ -42,9 +42,9 @@ export const courses = [
     description:
       "Foundation and target preparation for the UP NMMS exam, with practice questions and tests. Please ask us for the current batch details.",
     label: "Class 8",
-    image: "/media/nmms2027.jpeg",
-    imageWidth: 1600,
-    imageHeight: 986,
+    image: "/media/nmmsstudybook.jpeg",
+    imageWidth: 738,
+    imageHeight: 1078,
     imageFit: "contain",
     imagePosition: "50% 50%",
     bullets: ["UP NMMS preparation", "Practice questions", "Tests"],
@@ -55,7 +55,9 @@ export const courses = [
     title: "Agniveer Preparation",
     description: "Preparation support for the Agniveer exam. Please ask us whether a batch is currently running.",
     label: "Defence exam",
-    image: null,
+    image: "/media/agneeveer.jpeg",
+    imageWidth: 1600,
+    imageHeight: 1066,
     bullets: ["Agniveer preparation support", "Ask whether a batch is running"],
     // TODO: confirm with the academy that this is currently offered.
     show: true,
