@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://athakprayshacademy.vercel.app/sitemap.xml
+Sitemap: https://athakprayasacademy.com/sitemap.xml

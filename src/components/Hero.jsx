@@ -37,7 +37,7 @@ export default function Hero() {
               alt={heroImage.alt}
               width={heroImage.width}
               height={heroImage.height}
-              fetchPriority="high"
+              fetchpriority="high"
               loading="eager"
               decoding="async"
             />
