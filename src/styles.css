@@ -283,6 +283,14 @@ ul {
   flex-direction: column;
 }
 
+.hero-hindi {
+  color: var(--navy);
+  font-size: clamp(1.25rem, 3.2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 .85rem;
+}
+
 .eyebrow {
   color: var(--red-deep);
   font-weight: 700;

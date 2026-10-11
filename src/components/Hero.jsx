@@ -8,7 +8,8 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-content">
           <p className="eyebrow">{academy.tagline}</p>
-          <h1 lang="hi">सही मार्गदर्शन, नियमित अभ्यास और बेहतर तैयारी</h1>
+          <h1>Coaching Classes in Handia, Prayagraj</h1>
+          <p className="hero-hindi" lang="hi">सही मार्गदर्शन, नियमित अभ्यास और बेहतर तैयारी</p>
           <p className="lead">
             Classes 6–12, UP/CBSE Board support, and focused preparation for JNVST, CHS, BHU, and the UP NMMS Scholarship Exam.
           </p>

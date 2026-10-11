@@ -10,6 +10,7 @@ export const courses = [
     imageHeight: 722,
     imagePosition: "50% 50%",
     bullets: ["UP Board and CBSE support", "Classes 6 through 12", "Regular teaching and practice"],
+    seoUrl: "/coaching-classes-handia/",
     show: true,
   },
   {
@@ -20,6 +21,7 @@ export const courses = [
     image: null,
     subjects: ["Mathematics", "English", "Science"],
     bullets: ["Mathematics", "English", "Science"],
+    seoUrl: "/coaching-classes-handia/",
     show: true,
   },
   {
@@ -34,6 +36,7 @@ export const courses = [
     imageFit: "contain",
     imagePosition: "50% 50%",
     bullets: ["JNVST", "CHS", "BHU"],
+    seoUrl: "/entrance-exam-preparation-handia/",
     show: true,
   },
   {
@@ -49,6 +52,7 @@ export const courses = [
     imageFit: "contain",
     imagePosition: "50% 50%",
     bullets: ["UP NMMS scholarship exam preparation", "Practice questions", "Mock tests"],
+    seoUrl: "/up-nmms-scholarship-exam-handia/",
     show: true,
   },
   {
