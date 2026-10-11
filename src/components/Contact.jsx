@@ -69,8 +69,10 @@ export default function Contact({ preselected }) {
           </address>
           <p className="timing-note">Call or WhatsApp for batch timings.</p>
           <div className="social-buttons" aria-label="Contact and social links">{socials.map((s) => <a key={s.label} className="social-button" href={s.href} aria-label={s.label} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{s.icon}</svg></a>)}</div>
-          <div className="map-frame"><iframe src={academy.mapsEmbedUrl} loading="lazy" title="Athak Prayas Academy location map" referrerPolicy="no-referrer-when-downgrade" /></div>
-          <p><a className="btn btn-outline btn-small" href={academy.mapsUrl} target="_blank" rel="noopener noreferrer">Get Directions</a></p>
+          <div className="map-frame">
+            <iframe src={academy.mapsEmbedUrl} loading="lazy" title="Athak Prayas Academy location map" referrerPolicy="no-referrer-when-downgrade" />
+            <a className="map-open-link" href={academy.mapsUrl} target="_blank" rel="noopener noreferrer">Open <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
 
         <form onSubmit={onSubmit} noValidate aria-labelledby="enquiry-title">

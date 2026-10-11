@@ -20,6 +20,6 @@ export const teachers = [
     name: "Gurudev Sir",
     subject: "Science",
     details: "Specialized Science mentor guiding concepts in Physics, Chemistry, and Biology.",
-    photo: null,
+    photo: "/media/gurudevsir.jpeg",
   },
 ];
