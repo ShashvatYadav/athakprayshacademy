@@ -3,7 +3,7 @@ import { academy } from "../data/academy.js";
 import { courses, classOptions } from "../data/courses.js";
 import { whatsappLink, isValidPhone } from "../lib/whatsapp.js";
 
-const interestOptions = [...courses.filter((c) => c.show).map((c) => c.title), "Not sure yet"];
+const interestOptions = [...courses.filter((c) => c.show).map((c) => ({ value: c.title, label: c.interestLabel || c.title })), { value: "Not sure yet", label: "Not sure yet" }];
 function ContactIcon({ kind }) {
   const common = { fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" };
   return <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" {...common}>{kind === "address" ? <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></> : kind === "phone" ? <path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3c0 1-1 2-2 2C10 19 5 14 5 5c0-1 1-2 2-2Z"/> : kind === "whatsapp" ? <><path d="M20 11.5a8 8 0 0 1-12 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.5 2 2 3.5 4 4"/></> : <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></>}</svg>;
@@ -109,7 +109,7 @@ export default function Contact({ preselected }) {
             <label htmlFor="interest">Interested course / exam</label>
             <select id="interest" value={form.interest} onChange={set("interest")}>
               <option value="">Select course</option>
-              {interestOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+              {interestOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
           </div>
 

@@ -10,8 +10,7 @@ export default function Hero() {
           <p className="eyebrow">{academy.tagline}</p>
           <h1 lang="hi">सही मार्गदर्शन, नियमित अभ्यास और बेहतर तैयारी</h1>
           <p className="lead">
-            Classes 6–12, UP/CBSE Board support, and focused preparation for JNVST, CHS, BHU, NMMS
-            and other listed exams.
+            Classes 6–12, UP/CBSE Board support, and focused preparation for JNVST, CHS, BHU, and the UP NMMS Scholarship Exam.
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href={whatsappLink({})} target="_blank" rel="noopener noreferrer">

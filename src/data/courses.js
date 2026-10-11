@@ -38,16 +38,17 @@ export const courses = [
   },
   {
     id: "nmms",
-    title: "NMMS Preparation (Class 8)",
+    title: "UP NMMS Scholarship Exam",
+    interestLabel: "Scholarship Exam Preparation: UP NMMS (Class 8th)",
     description:
-      "Foundation and target preparation for the UP NMMS exam, with practice questions and tests. Please ask us for the current batch details.",
-    label: "Class 8",
+      "Scholarship Exam Preparation: UP NMMS (Class 8th). Focused preparation with practice questions and tests. Please ask us for the current batch details.",
+    label: "Class 8th",
     image: "/media/nmmsstudybook.jpeg",
     imageWidth: 738,
     imageHeight: 1078,
     imageFit: "contain",
     imagePosition: "50% 50%",
-    bullets: ["UP NMMS preparation", "Practice questions", "Tests"],
+    bullets: ["UP NMMS scholarship exam preparation", "Practice questions", "Mock tests"],
     show: true,
   },
   {
